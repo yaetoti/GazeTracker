@@ -1,0 +1,20 @@
+# Keep only directories
+Assets/Model0/*
+!Assets/Model0/Images/
+!Assets/Model0/Weights/
+Assets/Model0/Images/*
+Assets/Model0/Weights/*
+!Assets/Model0/Images/.gitkeep
+!Assets/Model0/Weights/.gitkeep
+
+.idea/
+.vscode/
+__pycache__/
+
+.venv/
+venv/
+env/
+ENV/
+
+.DS_Store
+Thumbs.db
