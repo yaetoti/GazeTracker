@@ -1,8 +1,14 @@
 # Foveated Rendering R&D Project (Part 2: Gaze Tracker)
 
-Part of a multidisciplinary research project that combines computer vision with a custom graphics engine. The goal of the project is to adapt foveated rendering methods for ray-tracing systems on PCs using an RGB camera to achieve an increase in rendering speed.
+Part of a multidisciplinary research project that combines computer vision with a custom graphics engine. The goal of the project is to adapt foveated rendering methods for ray-tracing systems on PCs using an RGB camera to achieve an increase in rendering speed. Developed as a part of a master's thesis (grade: 100/100).
 
-[video]
+Gaze detector demonstration:
+
+https://github.com/user-attachments/assets/9e13692b-5344-44d9-823e-45e1530d853a
+
+Foveated rendering demonstration (I am looking at the mouse cursor):
+
+https://github.com/user-attachments/assets/cf51a411-b808-4002-a362-b74ac2107873
 
 The project's homepage and the beginning of the installation instructions can be found at the [link](https://github.com/yaetoti/RaytracerCUDA.git)
 
