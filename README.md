@@ -58,3 +58,59 @@ pip install -r requirements.txt
 
 The tracker requires a quick personalized calibration process. Follow these steps in exact order:
 
+Go to the directory of the model you want:
+
+```sh
+cd MediaPipeClassification
+# or
+cd MediaPipeLinear
+```
+
+### 1 Recording
+Run one of the recording scripts of your choice (prefixed with `N1`):
+
+```sh
+python N1_RecordLinear.py
+# or
+python N1_RecordClasses.py
+```
+
+You will be prompted to start recording from scratch or add data to an existing recording. A PyGame window will then open. Press the spacebar to start recording and follow the moving dot with your eyes, slightly moving your head (or move your eyes within the outlined area if you chose the second approach. In this case, you can also switch between zones using the TAB key in any order).
+
+When you feel you have enough data, press ECS: the window will close, and the data will be saved automatically. Usually, about 50 frames are sufficient for each of the four main head rotation directions per screen segment. For the linear approach it's about 1–2 loops.
+
+Both too little and too much data can lead to noisy samples or overfitting, so try to find an option that works for you. At this stage, the tracker is very sensitive to data variability.
+
+If you want to change the number of frames per segment, you'll need to modify the `images` variable in the source code. There's no handy UI since the project is in the proof-of-concept stage.
+
+### 2 Postprocess
+
+This step is performed automatically. Just like with recording, you will be prompted to update the existing data or restart the entire process.
+
+```sh
+python N2_Postprocess.py
+```
+
+### 3 Calibration
+
+This step is automated, but you can continue to train the model as many times as you like, as long as it makes sense. The console displays the iteration number, the loss function, and the average accuracy deviation in pixels.
+
+```sh
+python N3_Calibration.py
+```
+
+To change the number of iterations per run, modify the `epochs` variable in the script.
+
+### 4 Execution
+
+You can test the model directly in user interface mode by running the command below. The statistics will be displayed to the console. 
+
+```
+python N4_Predict.py
+```
+
+Or you can run the gaze tracker service that sends the coordinates to the engine from the [first part](https://github.com/yaetoti/RaytracerCUDA/tree/gaze-detector)
+
+```
+python N4_Service.py
+```
