@@ -83,7 +83,7 @@ python N1_RecordClasses.py
 
 You will be prompted to start recording from scratch or add data to an existing recording. A PyGame window will then open. Press the spacebar to start recording and follow the moving dot with your eyes, slightly moving your head (or move your eyes within the outlined area if you chose the second approach. In this case, you can also switch between zones using the TAB key in any order).
 
-When you feel you have enough data, press ECS: the window will close, and the data will be saved automatically. Usually, about 50 frames are sufficient for each of the four main head rotation directions per screen segment. For the linear approach it's about 1–2 loops.
+When you feel you have enough data, press ECS: the window will close, and the data will be saved automatically. Usually, about 300 frames are sufficient for each of the four main head rotation directions per screen segment. For the linear approach it's about 1000 frames.
 
 Both too little and too much data can lead to noisy samples or overfitting, so try to find an option that works for you. At this stage, the tracker is very sensitive to data variability.
 
@@ -111,12 +111,12 @@ To change the number of iterations per run, modify the `epochs` variable in the 
 
 You can test the model directly in user interface mode by running the command below. The statistics will be displayed to the console. 
 
-```
+```sh
 python N4_Predict.py
 ```
 
 Or you can run the gaze tracker service that sends the coordinates to the engine from the [first part](https://github.com/yaetoti/RaytracerCUDA/tree/gaze-detector)
 
-```
+```sh
 python N4_Service.py
 ```
